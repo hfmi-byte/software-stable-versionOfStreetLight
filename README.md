@@ -1,0 +1,1 @@
+需要在src/main/resources下放一份application.yml，导入华为云等的配置才能使用
