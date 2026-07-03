@@ -1,0 +1,15 @@
+## db.setting文件
+
+url = jdbc:mysql://43.136.185.53:3306/zr001
+user = zr001
+pass = zr001
+
+## 可选配置
+# 是否在日志中显示执行的SQL
+showSql = true
+# 是否格式化显示的SQL
+formatSql = false
+# 是否显示SQL参数
+showParams = true
+# 打印SQL的日志等级，默认debug，可以是info、warn、error
+sqlLevel = info

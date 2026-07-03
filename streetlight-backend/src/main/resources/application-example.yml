@@ -1,0 +1,79 @@
+# ============================================================
+# 使用说明：将此文件复制为 application.yml，填入真实值后运行
+# application.yml 已加入 .gitignore，不会提交到 Git
+# ============================================================
+
+server:
+  port: 9091
+
+spring:
+  application:
+    name: streetlight-backend
+  datasource:
+    url: jdbc:mysql://<DB_HOST>:3306/<DB_NAME>?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: <DB_USER>
+    password: <DB_PASSWORD>
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 5000
+      max-lifetime: 55000
+      idle-timeout: 50000
+      connection-test-query: SELECT 1
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ssXXX
+    time-zone: Asia/Shanghai
+
+streetlight:
+  mode: huawei
+  jwt:
+    secret: "<CHANGE_ME_RANDOM_STRING>"
+    expire-hours: 24
+  offline-timeout-sec: 300
+  offline-scan-interval-ms: 30000
+  auto-command-cooldown-sec: 10
+  auto-off-hysteresis-lux: 30
+  history-sample-interval-sec: 3
+  default-accounts:
+    - username: admin
+      password: admin123
+      role: admin
+    - username: municipal01
+      password: 123456
+      role: municipal
+
+huawei:
+  iot:
+    endpoint: "https://<YOUR_IOTDA_ENDPOINT>"
+    instance-id: "<INSTANCE_ID>"
+    project-id: "<PROJECT_ID>"
+    access-key: ""
+    secret-key: ""
+    iam:
+      endpoint: "https://iam.myhuaweicloud.com"
+      domain: "<IAM_DOMAIN>"
+      username: "<IAM_USERNAME>"
+      password: "<IAM_PASSWORD>"
+      project-name: "cn-north-4"
+    service-id: "Light"
+    command-name: "Light_Control_Led"
+    report-service-id: "Light"
+
+mqtt:
+  enabled: false
+  host-url: tcp://<MQTT_HOST>:1883
+  client-id-prefix: group8-backend-
+  username: ""
+  password: ""
+  connection-timeout: 10
+  keep-alive: 60
+  clean-session: true
+  reconnect: true
+  qos: 1
+  topic-prefix: group8_streetlight
+
+logging:
+  level:
+    com.group8.streetlight: DEBUG
+    org.eclipse.paho: WARN

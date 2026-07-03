@@ -1,0 +1,14 @@
+mqtt:
+  hostUrl: tcp://43.136.185.53:1883
+  username: admin
+  password: public
+  client-id: mqtt_test009
+  cleanSession: true
+  reconnect: true
+  timeout: 100
+  keepAlive: 100
+  defaultTopic: mqtt_test008/#
+  isOpen: true
+  qos: 1
+server:
+  port: 9091

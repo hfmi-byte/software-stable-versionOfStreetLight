@@ -1,0 +1,30 @@
+# 敏感配置文件（含真实密码）
+streetlight-backend/src/main/resources/application.yml
+
+# IDE / 工具元数据
+.metals/
+streetlight-backend/.metals/
+**/__MACOSX/
+**/.DS_Store
+*.mv.db
+
+# Maven 构建产物
+target/
+*.jar
+*.war
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# 日志
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.swp
+*~
